@@ -26,6 +26,7 @@
   --linha:rgba(35,48,27,.14);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
+html,body{max-width:100%;overflow-x:hidden;}
 html{scroll-behavior:smooth;}
 body{
   background:var(--linho-esc);
@@ -322,6 +323,21 @@ footer .cnpj{color:rgba(237,231,216,.5);}
 
   .btn{padding:18px 26px;font-size:14px;}
   .offer-buy .btn{font-size:15px;}
+}
+@media (max-width:480px){
+  .wrap{padding:0 14px;}
+  .sec{padding:52px 0;}
+  .hero h1{font-size:25px;line-height:1.18;}
+  .hero-sub{font-size:14px;}
+  .price-hero .val{font-size:34px;}
+  .h-sec{font-size:23px;}
+  .sec-bridge h2,.sec-anchor h2{font-size:21px;}
+  .cron-card{padding:28px 18px;}
+  .cron-card h2{font-size:28px;}
+  .offer-buy{padding:28px 18px;}
+  .offer-buy .pval{font-size:40px;}
+  .btn{padding:16px 20px;font-size:14px;width:100%;text-align:center;white-space:normal;}
+  .proof-grid .phone{flex:0 0 82%;}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;}
