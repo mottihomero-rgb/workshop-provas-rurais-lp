@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshop Provas Rurais Previdenciárias · Averbação de tempo rural antes dos 12 anos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   WORKSHOP PROVAS RURAIS PREVIDENCIÁRIAS — ID VISUAL HORIZONTE
+   Placeholders de imagem: divs cinza com rótulo. Trocar por assets reais.
+   Links de checkout: href="#" (substituir após finalização).
+   ============================================================ */
+:root{
+  --linho:#EDE7D8;
+  --linho-esc:#D8D1BF;
+  --floresta:#3E5A2E;
+  --musgo:#7C8A4E;
+  --terracota:#C56B3E;
+  --terracota-esc:#A9542D;
+  --mata:#23301B;
+  --texto:#3f3e34;
+  --texto-suave:#57564a;
+  --linha:rgba(35,48,27,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--linho-esc);
+  color:var(--texto);
+  font-family:'Hanken Grotesk',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  line-height:1.6;
+}
+h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.015em;color:var(--mata);}
+img{max-width:100%;display:block;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+.sec{padding:96px 0;}
+.btn{
+  display:inline-block;background:var(--terracota);color:#fff;text-decoration:none;
+  font:600 16px/1 'Space Grotesk',sans-serif;letter-spacing:.02em;
+  padding:20px 40px;border-radius:10px;white-space:nowrap;
+  box-shadow:0 14px 30px -12px rgba(197,107,62,.7);
+  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.btn:hover{background:var(--terracota-esc);transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(197,107,62,.8);}
+.btn:focus-visible{outline:3px solid var(--mata);outline-offset:3px;}
+
+/* placeholder de imagem */
+.ph{
+  background:repeating-linear-gradient(45deg,#cdc7b6,#cdc7b6 12px,#d5cfbf 12px,#d5cfbf 24px);
+  border:1px dashed rgba(35,48,27,.35);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  color:#6f6a5c;font:600 11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.08em;text-transform:uppercase;padding:22px;min-height:200px;
+}
+
+/* fade up */
+.fu{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease;}
+.fu.in{opacity:1;transform:none;}
+
+/* ===== LOGO (símbolo Horizonte + wordmark) ===== */
+.logo{display:inline-flex;align-items:center;gap:15px;}
+.logo-mark{display:flex;align-items:flex-end;gap:5px;height:46px;}
+.logo-mark span{width:11px;border-radius:3px;}
+.logo-mark span:nth-child(1){height:40%}.logo-mark span:nth-child(2){height:64%}
+.logo-mark span:nth-child(3){height:82%}.logo-mark span:nth-child(4){height:100%}
+.logo-word{display:flex;flex-direction:column;}
+.lw-kick{font:600 11px/1 'Space Grotesk',sans-serif;letter-spacing:.3em;text-transform:uppercase;margin-bottom:5px;}
+.lw-name{font:700 25px/1.02 'Space Grotesk',sans-serif;letter-spacing:-.01em;}
+.lw-name em{font-style:normal;color:var(--terracota);}
+.logo.dark .logo-mark span:nth-child(1),.logo.dark .logo-mark span:nth-child(2){background:var(--linho);}
+.logo.dark .logo-mark span:nth-child(3){background:var(--musgo);}
+.logo.dark .logo-mark span:nth-child(4){background:var(--terracota);}
+.logo.dark .lw-kick{color:var(--musgo);}.logo.dark .lw-name{color:var(--linho);}
+.logo.light .logo-mark span:nth-child(1),.logo.light .logo-mark span:nth-child(2){background:var(--floresta);}
+.logo.light .logo-mark span:nth-child(3){background:var(--musgo);}
+.logo.light .logo-mark span:nth-child(4){background:var(--terracota);}
+.logo.light .lw-kick{color:var(--musgo);}.logo.light .lw-name{color:var(--mata);}
+.logo.lg .logo-mark{height:58px;gap:6px;}.logo.lg .logo-mark span{width:13px;}
+.logo.lg .lw-name{font-size:32px;}.logo.lg .lw-kick{font-size:12px;}
+
+/* ===== TOPO: barra de encerramento ===== */
+.topbar{background:var(--terracota);color:#fff;text-align:center;padding:11px 18px;font:600 13.5px/1.3 'Hanken Grotesk',sans-serif;position:relative;z-index:5;}
+.topbar b{font-variant-numeric:tabular-nums;letter-spacing:.02em;}
+
+/* ===== HERO ===== */
+.hero{position:relative;overflow:hidden;background:var(--mata);}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg .ph{position:absolute;inset:0;height:100%;width:100%;border:none;border-radius:0;
+  background:repeating-linear-gradient(45deg,#2c3a22,#2c3a22 14px,#31402a 14px,#31402a 28px);color:#5f6f4d;min-height:0;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,48,27,.72),rgba(35,48,27,.92));}
+.hero-in{position:relative;z-index:2;padding:60px 0 84px;text-align:center;color:var(--linho);}
+.hero-in .wrap{display:flex;flex-direction:column;align-items:center;gap:22px;}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:4px;}
+.chip{border:1px solid rgba(237,231,216,.34);border-radius:999px;padding:8px 16px;font:600 12.5px/1 'Space Grotesk',sans-serif;letter-spacing:.02em;color:var(--linho);}
+.chip.live{background:var(--terracota);border-color:var(--terracota);color:#fff;}
+.hero h1{color:var(--linho);font-size:50px;line-height:1.05;font-weight:700;max-width:900px;}
+.hero h1 .hl{color:var(--terracota);}
+.hero-sub{font:400 20px/1.55 'Hanken Grotesk',sans-serif;color:rgba(237,231,216,.9);max-width:660px;}
+.price-hero{margin-top:6px;}
+.price-hero .val{font:700 50px/1 'Space Grotesk',sans-serif;color:var(--linho);}
+.price-hero .val small{font-size:24px;vertical-align:top;margin-right:2px;}
+
+/* barra de escassez */
+.scar{width:100%;max-width:440px;margin-top:8px;}
+.scar-top{display:flex;justify-content:space-between;font:600 11px/1 ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:rgba(237,231,216,.85);margin-bottom:8px;}
+.scar-track{height:9px;background:rgba(237,231,216,.2);border-radius:999px;overflow:hidden;}
+.scar-fill{height:100%;width:86%;background:linear-gradient(90deg,var(--musgo),var(--terracota));border-radius:999px;transition:width 1.1s ease;}
+
+/* ===== marquee autoridade ===== */
+.marq{background:var(--floresta);color:var(--linho);overflow:hidden;white-space:nowrap;padding:16px 0;border-top:1px solid rgba(237,231,216,.12);border-bottom:1px solid rgba(237,231,216,.12);}
+.marq-in{display:inline-flex;animation:scroll 26s linear infinite;}
+.marq-in span{font:600 14px/1 'Space Grotesk',sans-serif;letter-spacing:.04em;padding:0 26px;display:inline-flex;align-items:center;}
+.marq-in span::after{content:"·";color:var(--terracota);margin-left:26px;font-size:20px;}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== headings de seção ===== */
+.h-sec{font-size:38px;line-height:1.08;font-weight:700;max-width:780px;}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+
+/* ===== prova social ===== */
+.sec-proof{background:var(--linho);}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px;}
+.phone{background:#222;border-radius:26px;padding:9px;box-shadow:0 22px 44px -22px rgba(35,48,27,.55);}
+.phone .ph{border-radius:18px;min-height:340px;background:repeating-linear-gradient(45deg,#e7f0dc,#e7f0dc 12px,#eef4e6 12px,#eef4e6 24px);color:#7c8a4e;border-color:rgba(124,138,78,.5);}
+.phone img{width:100%;height:340px;object-fit:cover;object-position:top center;border-radius:18px;display:block;}
+
+/* ===== dor ===== */
+.sec-pain{background:var(--mata);color:var(--linho);}
+.sec-pain h2{color:var(--linho);}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:40px;}
+.pain-img{position:relative;min-height:380px;}
+.pain-img .ph{position:absolute;inset:0;height:100%;background:repeating-linear-gradient(45deg,#2c3a22,#2c3a22 12px,#31402a 12px,#31402a 24px);color:#5f6f4d;border-color:rgba(237,231,216,.25);}
+.bubble{position:absolute;background:var(--terracota);color:#fff;font:600 13.5px/1.35 'Hanken Grotesk',sans-serif;padding:11px 15px;border-radius:14px;max-width:230px;box-shadow:0 12px 24px -10px rgba(0,0,0,.5);z-index:2;}
+.bubble::after{content:"";position:absolute;bottom:-7px;left:24px;border:8px solid transparent;border-top-color:var(--terracota);border-bottom:0;}
+.b1{top:12px;left:-6px}.b2{top:150px;right:-8px}.b3{bottom:20px;left:28px}
+.pain-txt p{color:rgba(237,231,216,.9);font-size:18px;margin-bottom:18px;}
+.pain-txt strong{color:#fff;}
+.two-opt{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;}
+.opt{border:1px solid rgba(237,231,216,.24);border-radius:12px;padding:18px;}
+.opt h4{font:600 14px/1.3 'Space Grotesk',sans-serif;margin-bottom:8px;}
+.opt.bad h4{color:#e0a184;}.opt.good h4{color:var(--musgo);}
+.opt p{font-size:14.5px;color:rgba(237,231,216,.82);margin:0;}
+
+/* ===== transição ===== */
+.sec-bridge{background:var(--floresta);color:var(--linho);text-align:center;padding:80px 0;}
+.sec-bridge h2{color:var(--linho);font-size:34px;max-width:760px;margin:0 auto;}
+.sec-bridge h2 .hl{color:var(--terracota);}
+
+/* ===== pilares zigzag ===== */
+.sec-pill{background:var(--linho-esc);}
+.pill{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;margin-top:50px;}
+.pill:nth-child(even) .pill-media{order:2;}
+.pill-media .ph{min-height:300px;background:repeating-linear-gradient(45deg,#e0dbcb,#e0dbcb 12px,#e8e2d3 12px,#e8e2d3 24px);}
+.pill-txt h3{font-size:26px;margin:0 0 12px;}
+.pill-txt p{font-size:16.5px;color:var(--texto-suave);}
+.pill-txt ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:9px;}
+.pill-txt li{position:relative;padding-left:26px;font-size:15.5px;color:var(--texto);}
+.pill-txt li::before{content:"";position:absolute;left:0;top:8px;width:11px;height:11px;border-radius:3px;background:var(--musgo);}
+
+/* ===== cronograma ===== */
+.sec-cron{background:var(--linho);}
+.cron-card{background:var(--mata);border-radius:22px;padding:50px 48px;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;box-shadow:0 34px 70px -40px rgba(35,48,27,.6);}
+.chip-cron{display:inline-block;border:1px solid rgba(237,231,216,.3);border-radius:999px;padding:9px 18px;font:500 13px/1 'Hanken Grotesk',sans-serif;color:var(--linho);margin-bottom:22px;}
+.cron-card h2{color:var(--linho);font-size:46px;margin-bottom:14px;}
+.cron-sub{color:var(--linho);font:500 18px/1.4 'Hanken Grotesk',sans-serif;margin-bottom:18px;}
+.cron-desc{color:rgba(237,231,216,.68);font-size:15px;line-height:1.6;max-width:370px;}
+.cron-rows{display:flex;flex-direction:column;}
+.cron-row{display:flex;justify-content:space-between;align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(237,231,216,.18);}
+.cron-row:last-child{border-bottom:none;}
+.cron-row .t{font:700 26px/1 'Space Grotesk',sans-serif;color:var(--linho);}
+.cron-row .l{font:400 21px/1 'Hanken Grotesk',sans-serif;color:rgba(237,231,216,.85);}
+
+/* ===== ancoragem com/sem ===== */
+.sec-anchor{background:var(--linho-esc);text-align:center;}
+.sec-anchor h2{font-size:34px;max-width:720px;margin:0 auto;}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:840px;margin:44px auto 0;}
+.cmp-card{border-radius:16px;padding:32px 30px;text-align:left;}
+.cmp-card.sem{background:#efe9db;border:1px dashed rgba(35,48,27,.3);}
+.cmp-card.com{background:var(--mata);color:var(--linho);}
+.cmp-card .lab{font:600 14px/1.4 'Hanken Grotesk',sans-serif;display:block;margin-bottom:16px;}
+.cmp-card.sem .lab{color:#7a7466;}.cmp-card.com .lab{color:rgba(237,231,216,.85);}
+.cmp-card .big{font:700 40px/1 'Space Grotesk',sans-serif;}
+.cmp-card.sem .big{color:#a2643f;}.cmp-card.com .big{color:#fff;}
+.cmp-card .big small{font-size:20px;vertical-align:top;}
+.cmp-card .note{display:block;margin-top:6px;font:500 13px/1.3 'Hanken Grotesk',sans-serif;}
+.cmp-card.sem .note{color:#8a8377;}.cmp-card.com .note{color:var(--musgo);}
+.anchor-bridge{font:500 19px/1.5 'Hanken Grotesk',sans-serif;color:var(--texto);max-width:560px;margin:34px auto 0;}
+
+/* ===== oferta (bloco reutilizável) ===== */
+.sec-offer{background:var(--linho);}
+.offer-card{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--linho);border-radius:20px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(35,48,27,.6);border:1px solid var(--linha);margin-top:44px;}
+.offer-media{background:var(--mata);padding:0;position:relative;min-height:420px;}
+.offer-media .ph{position:absolute;inset:0;height:100%;border-radius:0;background:repeating-linear-gradient(45deg,#2c3a22,#2c3a22 12px,#31402a 12px,#31402a 24px);color:#5f6f4d;border:none;}
+.offer-buy{padding:48px 44px;display:flex;flex-direction:column;gap:6px;justify-content:center;align-items:flex-start;}
+.offer-buy .datly{font:500 13.5px/1.4 'Hanken Grotesk',sans-serif;color:var(--texto-suave);margin:20px 0 20px;}
+.offer-buy .pval{font:700 58px/1 'Space Grotesk',sans-serif;color:var(--mata);}
+.offer-buy .pval small{font-size:26px;vertical-align:top;margin-right:3px;}
+.offer-buy .btn{width:100%;text-align:center;padding:22px;font-size:17px;margin-top:22px;}
+.seals{display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap;margin-top:18px;}
+.seal{display:flex;align-items:center;gap:7px;font:500 12px/1.3 'Hanken Grotesk',sans-serif;color:var(--texto-suave);}
+.seal .dot{width:8px;height:8px;border-radius:50%;background:var(--floresta);}
+
+/* alternância de fundo pra 2ª oferta */
+.sec-offer.alt{background:var(--linho-esc);}
+
+/* ===== para quem ===== */
+.sec-who{background:var(--linho-esc);}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px;}
+.who-col{border-radius:16px;padding:32px 30px;}
+.who-col.y{background:var(--linho);border:1px solid var(--linha);}
+.who-col.n{background:#e6dfd0;border:1px dashed rgba(35,48,27,.28);}
+.who-col h3{font-size:20px;margin-bottom:20px;}
+.who-col ul{list-style:none;display:flex;flex-direction:column;gap:13px;}
+.who-col li{position:relative;padding-left:30px;font-size:15.5px;color:var(--texto);}
+.who-col.y li::before{content:"✓";position:absolute;left:0;top:0;color:var(--floresta);font-weight:700;}
+.who-col.n li::before{content:"✕";position:absolute;left:0;top:0;color:#b06a4a;font-weight:700;}
+
+/* ===== conversa franca ===== */
+.sec-frank{background:var(--linho);}
+.frank-box{max-width:760px;margin:40px auto 0;background:var(--linho-esc);border-left:4px solid var(--terracota);border-radius:0 14px 14px 0;padding:34px 36px;}
+.frank-box p{font-size:17px;color:var(--texto);margin-bottom:16px;}
+.frank-box p:last-child{margin-bottom:0;}
+.frank-box strong{color:var(--mata);}
+
+/* ===== autoridade ===== */
+.sec-auth{background:var(--mata);color:var(--linho);}
+.auth-grid{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center;}
+.auth-photo .ph{min-height:420px;border-radius:18px;background:repeating-linear-gradient(45deg,#2c3a22,#2c3a22 12px,#31402a 12px,#31402a 24px);color:#5f6f4d;border-color:rgba(237,231,216,.28);}
+.auth-photo img{width:100%;min-height:420px;height:100%;object-fit:cover;object-position:70% center;border-radius:18px;display:block;}
+.auth-txt h2{color:var(--linho);font-size:34px;margin-bottom:8px;}
+.auth-txt .role{font:600 13px/1.4 'Space Grotesk',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--terracota);margin-bottom:22px;}
+.auth-txt p{color:rgba(237,231,216,.88);font-size:16.5px;margin-bottom:16px;}
+.auth-txt strong{color:#fff;}
+
+/* ===== garantia ===== */
+.sec-guar{background:var(--linho);}
+.guar-card{max-width:760px;margin:0 auto;background:var(--linho-esc);border:1px solid var(--linha);border-radius:18px;padding:38px;display:flex;gap:28px;align-items:center;}
+.guar-seal{flex:none;width:110px;height:110px;border-radius:50%;border:3px solid var(--floresta);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--floresta);}
+.guar-seal b{font:700 30px/1 'Space Grotesk',sans-serif;}
+.guar-seal span{font:600 10px/1.2 'Space Grotesk',sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-top:3px;}
+.guar-txt h3{font-size:21px;margin-bottom:10px;}
+.guar-txt p{font-size:15.5px;color:var(--texto-suave);}
+
+/* ===== faq ===== */
+.sec-faq{background:var(--linho-esc);}
+.faq-list{max-width:780px;margin:44px auto 0;}
+.faq-item{border-bottom:1px solid var(--linha);}
+.faq-q{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:24px 44px 24px 0;position:relative;font:600 18px/1.35 'Space Grotesk',sans-serif;color:var(--mata);}
+.faq-q::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:26px;color:var(--terracota);transition:transform .3s ease;font-family:'Space Grotesk';}
+.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{padding:0 0 24px;font-size:16px;color:var(--texto-suave);}
+.faq-q:focus-visible{outline:3px solid var(--musgo);outline-offset:2px;}
+
+/* ===== rodapé ===== */
+footer{background:var(--mata);color:rgba(237,231,216,.7);padding:52px 0 40px;}
+.foot-mark{margin-bottom:20px;}
+footer p{font-size:13px;line-height:1.7;max-width:680px;margin-bottom:10px;}
+footer .cnpj{color:rgba(237,231,216,.5);}
+
+/* ============================================================
+   RESPONSIVO / MOBILE
+   ============================================================ */
+@media (max-width:860px){
+  .wrap{padding:0 16px;}
+  .sec{padding:64px 0;}
+  .h-sec{font-size:27px;}
+  .center{text-align:center;}
+
+  .logo{gap:12px;}
+  .logo.lg .logo-mark{height:44px;}.logo.lg .logo-mark span{width:10px;}
+  .logo.lg .lw-name{font-size:23px;}
+  .logo .lw-name{font-size:21px;}
+
+  .hero h1{font-size:28px;}
+  .hero-sub{font-size:15px;}
+  .price-hero .val{font-size:40px;}
+
+  .marq-in{animation-duration:18s;}
+
+  .proof-grid{grid-template-columns:none;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:10px;-webkit-overflow-scrolling:touch;}
+  .proof-grid .phone{flex:0 0 74%;scroll-snap-align:center;}
+  .phone .ph{min-height:300px;}
+
+  .pain-grid{grid-template-columns:none;gap:30px;}
+  .pain-img{min-height:300px;}
+  .two-opt{grid-template-columns:none;}
+  .pain-txt p{font-size:15px;}
+
+  .sec-bridge h2,.sec-anchor h2{font-size:24px;}
+
+  .pill{grid-template-columns:none;gap:22px;}
+  .pill:nth-child(even) .pill-media{order:0;}
+  .pill-txt h3{font-size:22px;}
+
+  .cron-card{grid-template-columns:none;gap:28px;padding:34px 24px;}
+  .cron-card h2{font-size:34px;}
+  .cron-row .t{font-size:22px;}.cron-row .l{font-size:18px;}
+
+  .cmp{grid-template-columns:none;}
+  .who-grid{grid-template-columns:none;}
+
+  .offer-card{grid-template-columns:none;}
+  .offer-media{min-height:220px;}
+  .offer-buy{padding:32px 24px;align-items:center;text-align:center;}
+  .offer-buy .logo{justify-content:center;}
+  .offer-buy .seals{justify-content:center;}
+  .offer-buy .pval{font-size:46px;}
+
+  .auth-grid{grid-template-columns:none;gap:26px;}
+  .auth-photo .ph{min-height:320px;}
+  .auth-txt h2{font-size:26px;}
+
+  .guar-card{flex-direction:column;text-align:center;gap:20px;padding:30px 22px;}
+  .faq-q{font-size:16px;}
+
+  .btn{padding:18px 26px;font-size:14px;}
+  .offer-buy .btn{font-size:15px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+  .fu{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== BARRA DE ENCERRAMENTO ===== -->
+<div class="topbar">
+  ⚠ As inscrições encerram em breve · Fecha em <b id="cd">29:59</b>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-bg">
+    <div class="ph">FOTO ESPECIALISTA BG · Prof. Pedro Quadrado (foto ao vivo/estúdio, olhar para câmera)</div>
+  </div>
+  <div class="hero-ov"></div>
+  <div class="hero-in">
+    <div class="wrap">
+      <div class="logo dark lg">
+        <div class="logo-mark"><span></span><span></span><span></span><span></span></div>
+        <div class="logo-word">
+          <span class="lw-kick">Workshop ao vivo</span>
+          <span class="lw-name">Provas <em>Rurais</em><br>Previdenciárias</span>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip live">18/07 · 9h às 12h</span>
+        <span class="chip">Zoom ao vivo</span>
+        <span class="chip">3 horas de conteúdo</span>
+      </div>
+      <h1>A estratégia previdenciária que averba o tempo rural <span class="hl">antes dos 12 anos</span>, na via administrativa</h1>
+      <p class="hero-sub">Em 3 horas ao vivo, o passo a passo para provar e somar esse tempo direto na via administrativa, sem precisar judicializar, mesmo com poucas provas.</p>
+      <div class="price-hero">
+        <span class="val"><small>R$</small>24,90</span>
+      </div>
+      <a href="#oferta" class="btn">QUERO MINHA VAGA AO VIVO</a>
+      <div class="scar">
+        <div class="scar-top"><span>Vagas preenchidas</span><span id="scarPct">86%</span></div>
+        <div class="scar-track"><div class="scar-fill" id="scarFill"></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MARQUEE AUTORIDADE (somente entre hero e próxima seção) ===== -->
+<div class="marq" aria-hidden="true">
+  <div class="marq-in">
+    <span>+ 4000 concessões</span><span>Método validado</span><span>10 anos de atuação</span><span>+ 3000 alunos</span><span>+ 10 milhões em honorários</span>
+    <span>+ 4000 concessões</span><span>Método validado</span><span>10 anos de atuação</span><span>+ 3000 alunos</span><span>+ 10 milhões em honorários</span>
+  </div>
+</div>
+
+<!-- ===== PROVA SOCIAL ===== -->
+<section class="sec sec-proof">
+  <div class="wrap">
+    <h2 class="h-sec center fu">Advogados que aplicaram já viram o INSS mudar de resposta</h2>
+    <div class="proof-grid">
+      <div class="phone fu"><img src="https://files.catbox.moe/asg7nf.png" alt="Pensão por morte concedida na via administrativa" loading="lazy"></div>
+      <div class="phone fu"><img src="https://files.catbox.moe/njlifk.png" alt="Aposentadoria por idade rural concedida" loading="lazy"></div>
+      <div class="phone fu"><img src="https://files.catbox.moe/k8uf0o.png" alt="Aluna recomendando o método do Prof. Pedro Quadrado" loading="lazy"></div>
+      <div class="phone fu"><img src="https://files.catbox.moe/vy6kax.png" alt="Aluna elogiando o suporte e os deferimentos rurais" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOR ===== -->
+<section class="sec sec-pain">
+  <div class="wrap">
+    <h2 class="h-sec fu">Indeferimento rural = cliente insatisfeito e honorários perdidos</h2>
+    <div class="pain-grid">
+      <div class="pain-img fu">
+        <div class="ph">IMAGEM DOR · advogado(a) frustrado(a) olhando indeferimento na tela</div>
+        <div class="bubble b1">"De novo o INSS negou o tempo rural antes dos 12 anos."</div>
+        <div class="bubble b2">"Vou ter que jogar meu cliente em 4 anos de processo?"</div>
+        <div class="bubble b3">"Por que o escritório concorrente consegue e eu não?"</div>
+      </div>
+      <div class="pain-txt fu">
+        <p>Você sabe que aquele tempo existiu. O cliente trabalhou na roça desde criança, ajudou a família na lavoura antes mesmo de completar 12 anos. Mas na hora de somar, <strong>o INSS corta, o benefício some e a aposentadoria escorrega para outra data.</strong></p>
+        <p>O caminho de sempre é entrar com ação e esperar. Anos de espera, cliente ansioso, honorário travado no fim da fila do Judiciário.</p>
+        <div class="two-opt">
+          <div class="opt bad">
+            <h4>Continuar como está</h4>
+            <p>Aceitar o corte, judicializar tudo e torcer para o processo andar antes do cliente desistir.</p>
+          </div>
+          <div class="opt good">
+            <h4>Provar na via administrativa</h4>
+            <p>Reunir a prova certa, protocolar o requerimento correto e somar esse tempo sem depender de anos de ação.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRANSIÇÃO ===== -->
+<section class="sec-bridge">
+  <div class="wrap">
+    <h2 class="fu">Existe um caminho que a maioria dos advogados ignora: provar o tempo rural antes dos 12 anos <span class="hl">direto na via administrativa</span>.</h2>
+  </div>
+</section>
+
+<!-- ===== PILARES (zigzag) ===== -->
+<section class="sec sec-pill">
+  <div class="wrap">
+    <h2 class="h-sec center fu">O que você vai dominar no workshop</h2>
+
+    <div class="pill fu">
+      <div class="pill-media"><div class="ph">MOCKUP TEMA 01 · fundamento jurídico (slide/tablet)</div></div>
+      <div class="pill-txt">
+        <h3>Por que o tempo rural antes dos 12 anos pode ser contado</h3>
+        <p>O fundamento que a maioria não conhece e como usá-lo a favor do seu cliente.</p>
+        <ul>
+          <li>A base que sustenta o cômputo desse período</li>
+          <li>Os erros de tese que fazem o INSS negar de imediato</li>
+          <li>Quando o argumento se aplica e quando não</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pill fu">
+      <div class="pill-media"><div class="ph">MOCKUP TEMA 02 · provas do tempo rural (documentos)</div></div>
+      <div class="pill-txt">
+        <h3>A prova certa e quando usar cada uma</h3>
+        <p>Como reunir e aplicar a prova material e testemunhal do jeito certo para cada objetivo.</p>
+        <ul>
+          <li>Quando usar cada prova para computar o período total</li>
+          <li>Quando a prova vale apenas para metade da carência</li>
+          <li>Quando não usar determinadas provas, como as em nome dos irmãos</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pill fu">
+      <div class="pill-media"><div class="ph">MOCKUP TEMA 03 · autodeclaração rural (formulário)</div></div>
+      <div class="pill-txt">
+        <h3>Preenchimento correto da autodeclaração rural</h3>
+        <p>O documento que pode fortalecer ou enfraquecer todo o pedido, feito da forma certa.</p>
+        <ul>
+          <li>O que a autodeclaração precisa conter</li>
+          <li>Erros de preenchimento que derrubam o requerimento</li>
+          <li>Como alinhar a autodeclaração com as provas apresentadas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pill fu">
+      <div class="pill-media"><div class="ph">MOCKUP TEMA 04 · requerimento administrativo (protocolo)</div></div>
+      <div class="pill-txt">
+        <h3>O requerimento administrativo passo a passo</h3>
+        <p>Da montagem ao protocolo, a estrutura que aumenta a chance de deferimento sem ação judicial.</p>
+        <ul>
+          <li>Como estruturar e fundamentar o requerimento</li>
+          <li>O que anexar e como apresentar</li>
+          <li>Como agir diante de exigência ou indeferimento</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CRONOGRAMA ===== -->
+<section class="sec sec-cron">
+  <div class="wrap">
+    <div class="cron-card fu">
+      <div class="cron-left">
+        <span class="chip-cron">18/07 no Zoom | 9h às 12h</span>
+        <h2>CRONOGRAMA</h2>
+        <p class="cron-sub">Veja como será o nosso dia ao vivo:</p>
+        <p class="cron-desc">Considere encerrar um pouco mais tarde, caso os participantes peçam para nos aprofundarmos em algum ponto. O conteúdo combinado, porém, será entregue dentro do horário programado.</p>
+      </div>
+      <div class="cron-rows">
+        <div class="cron-row"><span class="t">9h00</span><span class="l">Início</span></div>
+        <div class="cron-row"><span class="t">10h30</span><span class="l">Pausa para o café</span></div>
+        <div class="cron-row"><span class="t">10h45</span><span class="l">Retorno</span></div>
+        <div class="cron-row"><span class="t">12h00</span><span class="l">Encerramento</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANCORAGEM (com x sem) ===== -->
+<section class="sec sec-anchor">
+  <div class="wrap">
+    <h2 class="fu">Quanto vale averbar o tempo rural antes dos 12 anos?</h2>
+    <div class="cmp fu">
+      <div class="cmp-card sem">
+        <span class="lab">Sem averbar o tempo rural antes dos 12 anos do seu cliente</span>
+        <span class="big"><small>R$</small>0,00</span>
+        <span class="note">em honorários</span>
+      </div>
+      <div class="cmp-card com">
+        <span class="lab">Averbando o tempo rural antes dos 12 anos do seu cliente</span>
+        <span class="big"><small>R$</small>6.000</span>
+        <span class="note">em honorários, no mínimo</span>
+      </div>
+    </div>
+    <p class="anchor-bridge fu">Valor para aprender essa estratégia definitiva...</p>
+  </div>
+</section>
+
+<!-- ===== OFERTA (1) ===== -->
+<section class="sec sec-offer" id="oferta">
+  <div class="wrap">
+    <h2 class="h-sec center fu">Garanta sua vaga no workshop ao vivo</h2>
+    <div class="offer-card fu">
+      <div class="offer-media"><div class="ph">MOCKUP · Workshop Provas Rurais Previdenciárias ao vivo</div></div>
+      <div class="offer-buy">
+        <div class="logo light">
+          <div class="logo-mark"><span></span><span></span><span></span><span></span></div>
+          <div class="logo-word">
+            <span class="lw-kick">Workshop ao vivo</span>
+            <span class="lw-name">Provas <em>Rurais</em><br>Previdenciárias</span>
+          </div>
+        </div>
+        <p class="datly">18/07 · 9h às 12h · Zoom ao vivo</p>
+        <span class="pval"><small>R$</small>24,90</span>
+        <a href="#" class="btn">QUERO MINHA VAGA AO VIVO</a>
+        <div class="seals">
+          <span class="seal"><span class="dot"></span>Compra segura</span>
+          <span class="seal"><span class="dot"></span>Acesso por e-mail</span>
+          <span class="seal"><span class="dot"></span>Vagas limitadas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARA QUEM (abaixo do preço) ===== -->
+<section class="sec sec-who">
+  <div class="wrap">
+    <h2 class="h-sec center fu">Esse workshop é para você?</h2>
+    <div class="who-grid">
+      <div class="who-col y fu">
+        <h3>É para você se</h3>
+        <ul>
+          <li>Atua ou quer atuar com Direito Previdenciário rural</li>
+          <li>Já perdeu tempo rural de cliente por não saber como provar</li>
+          <li>Quer computar esse período sem depender de anos de ação</li>
+          <li>Busca uma diferenciação real diante da concorrência</li>
+        </ul>
+      </div>
+      <div class="who-col n fu">
+        <h3>Não é para você se</h3>
+        <ul>
+          <li>Procura fórmula mágica de ganho garantido em todo caso</li>
+          <li>Não pretende estudar prova e fundamentação</li>
+          <li>Não tem interesse em aplicar teses de tempo rural na prática</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONVERSA FRANCA ===== -->
+<section class="sec sec-frank">
+  <div class="wrap">
+    <h2 class="h-sec center fu">Uma conversa franca antes de você decidir</h2>
+    <div class="frank-box fu">
+      <p>Vou ser direto com você. <strong>Esse não é um curso genérico de previdenciário.</strong> É um recorte específico: como provar e averbar o tempo rural exercido antes dos 12 anos, direto na via administrativa.</p>
+      <p>É conteúdo para aplicar no próximo caso, não para engavetar. São 3 horas ao vivo, com o Prof. Pedro Quadrado, focadas em tese, prova e requerimento.</p>
+      <p>Se você atua com esse público e já viu esse tempo ser cortado, <strong>essas 3 horas podem mudar a forma como você conduz seus próximos casos.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AUTORIDADE ===== -->
+<section class="sec sec-auth">
+  <div class="wrap">
+    <div class="auth-grid">
+      <div class="auth-photo fu"><img src="https://framerusercontent.com/images/Vf1qHdcsetZTgKq4ZtWyybxUs.png" alt="Prof. Pedro Quadrado" loading="lazy"></div>
+      <div class="auth-txt fu">
+        <h2>Quem vai te ensinar</h2>
+        <div class="role">Prof. Pedro Quadrado · Advogado previdenciário, especialista em aposentadoria rural</div>
+        <p>Advogado previdenciário há quase 10 anos, o Prof. Pedro Quadrado é especialista em aposentadoria e averbação de tempo rural. Ele criou a <strong>Metodologia Ao Quadrado</strong>, um método prático para reconhecer e computar tempo rural que costuma ser negado pelo INSS.</p>
+        <p>O método já soma <strong>mais de 4.000 concessões</strong> e formou <strong>mais de 3.000 advogados</strong>, que juntos já geraram mais de 10 milhões de reais em honorários aplicando essas teses. Agora ele reúne o recorte do tempo rural antes dos 12 anos neste workshop ao vivo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFERTA (2) — substitui a antiga chamada final ===== -->
+<section class="sec sec-offer alt">
+  <div class="wrap">
+    <h2 class="h-sec center fu">Garanta sua vaga no workshop ao vivo</h2>
+    <div class="offer-card fu">
+      <div class="offer-media"><div class="ph">MOCKUP · Workshop Provas Rurais Previdenciárias ao vivo</div></div>
+      <div class="offer-buy">
+        <div class="logo light">
+          <div class="logo-mark"><span></span><span></span><span></span><span></span></div>
+          <div class="logo-word">
+            <span class="lw-kick">Workshop ao vivo</span>
+            <span class="lw-name">Provas <em>Rurais</em><br>Previdenciárias</span>
+          </div>
+        </div>
+        <p class="datly">18/07 · 9h às 12h · Zoom ao vivo</p>
+        <span class="pval"><small>R$</small>24,90</span>
+        <a href="#" class="btn">QUERO MINHA VAGA AO VIVO</a>
+        <div class="seals">
+          <span class="seal"><span class="dot"></span>Compra segura</span>
+          <span class="seal"><span class="dot"></span>Acesso por e-mail</span>
+          <span class="seal"><span class="dot"></span>Vagas limitadas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GARANTIA ===== -->
+<section class="sec sec-guar">
+  <div class="wrap">
+    <div class="guar-card fu">
+      <div class="guar-seal"><b>7</b><span>dias</span></div>
+      <div class="guar-txt">
+        <h3>Garantia de 7 dias</h3>
+        <p>A inscrição é protegida pelo direito de arrependimento previsto no Código de Defesa do Consumidor. Se dentro de 7 dias você concluir que não é para você, basta solicitar o reembolso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec sec-faq">
+  <div class="wrap">
+    <h2 class="h-sec center fu">Perguntas frequentes</h2>
+    <div class="faq-list fu">
+      <div class="faq-item">
+        <button class="faq-q">Preciso ser advogado para participar?</button>
+        <div class="faq-a"><p>O conteúdo é voltado para advogados previdenciários e para quem atua com Direito Previdenciário rural. O foco é técnico, em tese e prova.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Consigo tirar dúvidas ao vivo com o professor?</button>
+        <div class="faq-a"><p>Sim. O workshop é ao vivo pelo Zoom e há espaço para dúvidas com o Prof. Pedro Quadrado ao longo das 3 horas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como recebo o link de acesso?</button>
+        <div class="faq-a"><p>Após a inscrição, o link da sala é enviado por e-mail. Confira também a caixa de spam e mantenha o e-mail cadastrado atualizado.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">O método serve para qualquer estado?</button>
+        <div class="faq-a"><p>O recorte é a via administrativa junto ao INSS, aplicável de forma nacional. A condução de cada caso sempre depende das provas e das particularidades da situação.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quais as formas de pagamento?</button>
+        <div class="faq-a"><p>A inscrição é de R$ 24,90, com pagamento no cartão ou Pix, nas condições disponíveis no checkout no momento da compra.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RODAPÉ ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-mark">
+      <div class="logo dark">
+        <div class="logo-mark"><span></span><span></span><span></span><span></span></div>
+        <div class="logo-word">
+          <span class="lw-kick">Workshop ao vivo</span>
+          <span class="lw-name">Provas <em>Rurais</em> Previdenciárias</span>
+        </div>
+      </div>
+    </div>
+    <p>Workshop Provas Rurais Previdenciárias · Averbação de tempo rural antes dos 12 anos na via administrativa. Evento ao vivo, online.</p>
+    <p>Este workshop tem caráter educacional e não garante resultado em casos concretos. A condução de cada situação depende de análise individual de provas e circunstâncias.</p>
+    <p class="cnpj">Prof. Pedro Quadrado · Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+/* ===== Contagem regressiva: encerramento das inscrições (reinicia a cada visita) ===== */
+(function(){
+  var total = 29*60 + 59;
+  var el = document.getElementById('cd');
+  function tick(){
+    var m = Math.floor(total/60), s = total%60;
+    if(el) el.textContent = (m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+    if(total>0){ total--; setTimeout(tick,1000); }
+  }
+  tick();
+})();
+
+/* ===== Barra de escassez: 86% -> máx 94% ===== */
+(function(){
+  var fill = document.getElementById('scarFill');
+  var pctEl = document.getElementById('scarPct');
+  var pct = 86, max = 94;
+  function render(){ if(fill) fill.style.width = pct+'%'; if(pctEl) pctEl.textContent = pct+'%'; }
+  render();
+  var t = setInterval(function(){ if(pct<max){ pct++; render(); } else { clearInterval(t); } }, 22000);
+  if('IntersectionObserver' in window && fill){
+    var io = new IntersectionObserver(function(ent){
+      ent.forEach(function(e){ if(e.isIntersecting && pct<max){ pct++; render(); } });
+    }, {threshold:.6});
+    io.observe(fill.closest('.scar'));
+  }
+})();
+
+/* ===== Fade up no scroll ===== */
+(function(){
+  var els = document.querySelectorAll('.fu');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+  var io = new IntersectionObserver(function(ent){
+    ent.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.14});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* ===== FAQ accordion ===== */
+(function(){
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var ans = item.querySelector('.faq-a');
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){
+        i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!open){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+    });
+  });
+})();
+
+/* ===== Reporta altura para o container Framer (embed) ===== */
+(function(){
+  function h(){
+    return Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight
+    );
+  }
+  var last = 0;
+  function send(){
+    var v = h();
+    if(v !== last){ last = v; try{ parent.postMessage({ type:'wprrp-height', height:v }, '*'); }catch(e){} }
+  }
+  window.addEventListener('load', send);
+  window.addEventListener('resize', send);
+  if('ResizeObserver' in window){ new ResizeObserver(send).observe(document.body); }
+  setInterval(send, 500);
+  send();
+})();
+</script>
+</body>
+</html>
